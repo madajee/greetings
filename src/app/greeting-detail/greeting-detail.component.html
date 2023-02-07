@@ -1,0 +1,8 @@
+<div *ngIf="greeting">
+  <h2>{{greeting.greet_en | uppercase}} Translates as</h2>
+  <div>lang: {{greeting.lang}}</div>
+  <div>
+    <label for="hero-name">Greeting: </label>
+    <span class="name">{{greeting.greet}}</span>
+  </div>
+</div>

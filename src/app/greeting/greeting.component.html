@@ -1,0 +1,15 @@
+<h2>My Greetings</h2>
+<ul class="heroes">
+  <li *ngFor="let greeting of greetings">
+    <button [class.selected]="greeting === selectedGreeting" type="button" (click)="onSelect(greeting)">
+      <span class="badge">{{greeting.lang}}</span>
+      <span class="name">{{greeting.greet_en}}</span>
+    </button>
+  </li>
+</ul>
+
+<app-greeting-detail [greeting]="selectedGreeting"></app-greeting-detail>
+<app-messages></app-messages>
+
+
+
