@@ -11,19 +11,13 @@ import { MessageService } from '../message.service';
 })
 export class GreetingComponent {
   greetings: Greeting[] = [];
-  selectedGreeting?: Greeting;
 
-  constructor(private greetingService: GreetingService, private messageService: MessageService) {}
+  constructor(private greetingService: GreetingService) {}
 
   getGreetings(): void {
 
     this.greetingService.getGreetings()
       .subscribe(greetings => this.greetings = greetings);
-  }
-
-  onSelect(greeting: Greeting): void {
-    this.selectedGreeting = greeting;
-    this.messageService.add(`GreetingsComponent: Selected greeting ${greeting.greet}, lang=${greeting.lang}`);
   }
 
   ngOnInit(): void {

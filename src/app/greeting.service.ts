@@ -17,4 +17,12 @@ export class GreetingService {
     this.messageService.add('GreetingService: fetched greetings');
     return greetings;
   }
+
+  getGreeting(id: number): Observable<Greeting> {
+    // For now, assume that a hero with the specified `id` always exists.
+    // Error handling will be added in the next step of the tutorial.
+    const greeting = GREETINGS.find(h => h.id === id)!;
+    this.messageService.add(`GreetingService: fetched greeting id=${id}`);
+    return of(greeting);
+  }
 }

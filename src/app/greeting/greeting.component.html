@@ -1,15 +1,14 @@
 <h2>My Greetings</h2>
 <ul class="heroes">
   <li *ngFor="let greeting of greetings">
-    <button [class.selected]="greeting === selectedGreeting" type="button" (click)="onSelect(greeting)">
+    <a routerLink="/detail/{{greeting.id}}">
+      <span class="badge">say {{greeting.greet_en}} in {{greeting.lang}}</span>
+      <!-- <span class="badge">{{greeting.id}}</span>
       <span class="badge">{{greeting.lang}}</span>
-      <span class="name">{{greeting.greet_en}}</span>
-    </button>
+      <span class="badge">{{greeting.greet_en}}</span> -->
+    </a>
   </li>
 </ul>
-
-<app-greeting-detail [greeting]="selectedGreeting"></app-greeting-detail>
-<app-messages></app-messages>
 
 
 
