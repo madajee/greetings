@@ -1,14 +1,39 @@
 <h2>My Greetings</h2>
-<ul class="heroes">
+<!-- <ul class="heroes">
   <li *ngFor="let greeting of greetings">
     <a routerLink="/detail/{{greeting.id}}">
       <span class="badge">say {{greeting.greet_en}} in {{greeting.lang}}</span>
-      <!-- <span class="badge">{{greeting.id}}</span>
+    <span class="badge">{{greeting.id}}</span>
       <span class="badge">{{greeting.lang}}</span>
-      <span class="badge">{{greeting.greet_en}}</span> -->
+      <span class="badge">{{greeting.greet_en}}</span>
     </a>
   </li>
+</ul> -->
+<div>
+  <label for="new-greeting">Greeting (eg: hello): </label>
+  <input id="new-greeting" #greetEn />
+
+  <label for="new-greeting-translated-language">Language (eg: es): </label>
+  <input id="new-greeting-lang" #greetLang />
+
+  <label for="new-greeting-translated">Translated (eg: Hola): </label>
+  <input id="new-greeting-translated" #greetTrans />
+
+  <!-- (click) passes input value to add() and then clears the input -->
+  <button type="button" class="add-button" (click)="add(greetEn.value, greetLang.value, greetTrans.value); greetEn.value=''">
+    Add Greeting
+  </button>
+</div>
+<ul class="list-group">
+  <li *ngFor="let greeting of greetings" class="list-group-item">
+  <a routerLink="/detail/{{greeting.id}}">
+      say {{greeting.greet_en}} in {{greeting.lang}}
+  </a>
+  <button type="button" class="delete" title="delete greeting"
+      (click)="delete(greeting)">x</button>
+</li>
 </ul>
+
 
 
 

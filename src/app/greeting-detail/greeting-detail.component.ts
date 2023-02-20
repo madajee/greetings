@@ -34,4 +34,11 @@ export class GreetingDetailComponent {
     this.location.back();
   }
 
+  save(): void {
+    if (this.greeting) {
+      this.greetingService.updateHero(this.greeting)
+        .subscribe(() => this.goBack());
+    }
+  }
+
 }

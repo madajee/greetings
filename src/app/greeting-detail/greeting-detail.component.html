@@ -3,8 +3,10 @@
   <div>lang: {{greeting.lang}}</div>
   <div>
     <label for="hero-name">Greeting: </label>
-    <span class="name">{{greeting.greet}}</span>
+    <!-- <span class="name">{{greeting.greet}}</span> -->
+    <input id="greeting" [(ngModel)]="greeting.greet" placeholder="greeting">
   </div>
 </div>
 
 <button type="button" (click)="goBack()">go back</button>
+<button type="button" (click)="save()">save</button>

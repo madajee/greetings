@@ -23,4 +23,20 @@ export class GreetingComponent {
   ngOnInit(): void {
     this.getGreetings();
   }
+
+  add(greetEn: string, greetLang: string, greetTranslated: string): void {
+    const greet_en = greetEn.trim();
+    const lang = greetLang.trim();
+    const greet = greetTranslated.trim();
+    if (! greetEn ||  !greetLang || !greetTranslated) { return; }
+    this.greetingService.addGreeting({ greet_en, lang, greet} as Greeting)
+      .subscribe(greeting => {
+        this.greetings.push(greeting);
+      });
+  }
+
+  delete(hero: Greeting): void {
+    this.greetings = this.greetings.filter(h => h !== hero);
+    this.greetingService.deleteGreeting(hero.id).subscribe();
+  }
 }
