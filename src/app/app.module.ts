@@ -13,6 +13,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './in-memory-data.service';
+import { GreetingSearchComponent } from './greeting-search/greeting-search.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { InMemoryDataService } from './in-memory-data.service';
     HeaderComponent,
     HomeComponent,
     MessagesComponent,
-    DashboardComponent
+    DashboardComponent,
+    GreetingSearchComponent
   ],
   imports: [
     BrowserModule,

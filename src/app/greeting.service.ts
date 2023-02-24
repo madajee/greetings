@@ -92,4 +92,18 @@ deleteGreeting(id: number): Observable<Greeting> {
   );
   }
 
+  /* GET heroes whose name contains search term */
+  searchGreetings(term: string): Observable<Greeting[]> {
+    if (!term.trim()) {
+      // if not search term, return empty hero array.
+      return of([]);
+    }
+    return this.http.get<Greeting[]>(`${this.greetingsUrl}/?greet_en=${term}`).pipe(
+      tap(x => x.length ?
+        this.log(`found heroes matching "${term}"`) :
+        this.log(`no heroes matching "${term}"`)),
+      catchError(this.handleError<Greeting[]>('searchGreetings', []))
+    );
+  }
+
 }

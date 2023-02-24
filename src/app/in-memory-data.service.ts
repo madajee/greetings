@@ -9,7 +9,9 @@ export class InMemoryDataService implements InMemoryDbService {
   createDb() {
     const greetings = [
       { id: 1, greet_en: 'hello', lang: 'es', greet: 'Hola'},
-      { id: 2, greet_en: 'good morning', lang: 'es', greet: 'buenos dias'}
+      { id: 2, greet_en: 'good morning', lang: 'es', greet: 'buenos dias'},
+      { id: 3, greet_en: 'hello', lang: 'fr', greet: 'Bonjour'},
+      { id: 4, greet_en: 'hello', lang: 'hi', greet: 'Namaste'}
     ];
     return {greetings};
   }

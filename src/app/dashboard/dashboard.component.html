@@ -2,6 +2,7 @@
 <div class="heroes-menu">
   <a *ngFor="let greeting of greetings"
   routerLink="/detail/{{greeting.id}}">
-    {{greeting.greet_en}}
+    {{greeting.greet_en}} ({{greeting.lang}})
   </a>
 </div>
+<app-greeting-search></app-greeting-search>
